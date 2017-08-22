@@ -27,7 +27,7 @@
 <script>
 import {alert, carousel, slider} from 'vue-strap'
 export default {
-  name: 'Links',
+  name: 'links',
   components: {
     alert: alert,
     carousel: carousel,

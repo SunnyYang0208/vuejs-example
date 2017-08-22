@@ -1,22 +1,32 @@
 <template>
   <div id="app">
-    <div class="clearfix">
-      <img class="logo" src="./assets/logo.png">
+    <div class="clearfix header">
+      <img class="logo" src="./img/logo.png">
       <span class="slogan">Vue.js</span>
     </div>
-    <router-view></router-view>
+    <div class="content">
+      <CustomMenu></CustomMenu>
+      <router-view class="page col-md-10 col-md-offset-2"></router-view>
+    </div>
   </div>
 </template>
 
 <script>
+import Menu from './components/Menu.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    CustomMenu: Menu
+  }
 }
 </script>
 
 <style>
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -34,7 +44,7 @@ export default {
 div a.navigator-arrow {
   position: absolute;
   top: 50%;
-  font-size: 5rem;
+  font-size: 3rem;
   color: #888888;
   cursor: pointer;
 }
@@ -47,5 +57,21 @@ div a.navigator-arrow {
 }
 .navigator-arrow.glyphicon-chevron-right {
   right: 10px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  border-bottom: solid 1px #ebebeb;
+  z-index: 1;
+}
+.content {
+  margin-top: 80px;
+}
+.page {
+  padding: 30px;
 }
 </style>
