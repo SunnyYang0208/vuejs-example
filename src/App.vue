@@ -5,7 +5,7 @@
       <span class="slogan">Vue.js</span>
     </div>
     <div class="content">
-      <CustomMenu></CustomMenu>
+      <CustomMenu syntax="Basic Syntax"></CustomMenu>
       <router-view class="page col-md-10 col-md-offset-2"></router-view>
     </div>
   </div>
