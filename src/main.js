@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 Vue.config.productionTip = false
-
+Vue.component('my-component', {
+  template: '<div>A custom component in main.js !</div>'
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
