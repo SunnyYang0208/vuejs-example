@@ -116,6 +116,52 @@
           A child component needs to explicitly declare the props it expects to receive using the props option. 
         </div>
         <img src="../img/props.png" />
+        <img src="../img/props_1.png" />
+        <h4>5. Slots</h4>
+        <div> Vue.js implements a content distribution API that is modeled after the current Web Components spec draft, using the special <span :style="noteColor">slot</span> element to serve as distribution outlets for the original content.</div>
+        <h4> 1) Single Slot</h4>
+        <img src="../img/slot_single.png" />
+        <h4>Result:</h4>
+        <div>
+          <h5>Parent title</h5>
+          <single-slot-child></single-slot-child>
+          <single-slot-child>Parent content</single-slot-child>
+        </div>
+        <h4> 2) Named Slot</h4>
+        <img src="../img/slot_named.png" />
+        <h4>Result:</h4>
+        <div>
+          <app-layout>
+            <h4 slot="header">Here might be a page title</h4>
+            <p>A paragraph for the main content.</p>
+            <p>And another one.</p>
+            <p slot="footer">Here's some contact info</p>
+          </app-layout>
+        </div>
+        <h4> 3) Scoped Slot</h4>
+        <div>A scoped slot is a special type of slot that functions as a reusable template (that can be passed data to) instead of already-rendered-elements.</div>
+        <img src="../img/slot_scoped.png" />
+        <div>A more typical use case for scoped slots would be a list component that allows the component consumer to customize how each item in the list should be rendered</div>
+        <img src="../img/slot_scoped_list.png" />
+        <h4>Result:</h4>
+        <div>
+          <slot-list :items="items">
+            <template slot="item" scope="props">
+              <li class="my-fancy-item">
+                <div>parent1 defined content</div>
+                {{ props.text }}
+              </li>
+            </template>
+          </slot-list>
+          <component :is="currentView" :items="items">
+            <template slot="item" scope="props">
+              <li class="my-fancy-item">
+                parent2 defined content
+                {{ props.text }}
+              </li>
+            </template>
+          </component>
+        </div>
       </div>
     </div>
   </div>
@@ -125,6 +171,16 @@
   import Test from '@/components/Test.vue'
   var Child = {
     template: '<div>A custom component2 in syntax.vue !</div>'
+  }
+  var singleSlotChild = {
+    template: '<div><h5>Child title</h5><slot><h4>This will only be displayed if there is no content to be distributed.</h4></slot></div>'
+  }
+  var AppLayout = {
+    template: '<div class="container"><header><slot name="header"></slot></header><main><slot></slot></main><footer><slot name="footer"></slot></footer></div>'
+  }
+  var SlotList = {
+    template: '<ul><slot name="item" v-for="item in items" :text="item.value"><!-- fallback content here --></slot></ul>',
+    props: ['items']
   }
   // Vue.component('anchored-heading', {
   //   template: '#anchored-heading-template',
@@ -140,6 +196,7 @@
     data () {
       return {
         vShowContent: "<h1 v-show='true'></h1>",
+        currentView: 'SlotList',
         noteColor: {
           color: '#42b983',
           fontWeight: 'bold'
@@ -162,6 +219,9 @@
     },
     components: {
       'my-component-2': Child,
+      'single-slot-child': singleSlotChild,
+      AppLayout: AppLayout,
+      SlotList: SlotList,
       test: Test
     },
     methods: {
@@ -202,6 +262,12 @@
           font-size: 1em;
           font-weight: bold;
         }
+      }
+      h4 {
+        margin-top: 20px;
+      }
+      > div {
+        line-height: 25px;
       }
     }
     .key-example-list {

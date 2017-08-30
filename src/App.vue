@@ -12,7 +12,13 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Menu from './components/Menu.vue'
+Vue.mixin({
+  created: function () {
+    console.log('I am in APP.vue mixin.')
+  }
+})
 export default {
   name: 'app',
   components: {
@@ -21,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -73,5 +79,28 @@ div a.navigator-arrow {
 }
 .page {
   padding: 30px;
+}
+.page > div {
+  margin-bottom: 40px;
+  h3 {
+    color: #333;
+    position: relative;
+    margin-left: 16px;
+    &:after {
+      content: "#";
+      color: #42b983;
+      position: absolute;
+      left: -0.7em;
+      bottom: -2px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+  h4 {
+    margin-top: 20px;
+  }
+  > div {
+    line-height: 25px;
+  }
 }
 </style>
