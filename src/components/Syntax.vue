@@ -6,6 +6,10 @@
         <img src="../img/template_bind.png">
       </div>
       <div>
+        <h3>Vue options</h3>
+        <img src="../img/vue_options.png">
+      </div>
+      <div>
         <h3>Computed Properties</h3>
         <div>
           Computed properites will only excute when the related property has changed. <br/>
