@@ -6,7 +6,7 @@
     On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
   </div>
 </template>
-<style>
+<style scoped>
   .introduction {
     font-size: 2rem;
   }

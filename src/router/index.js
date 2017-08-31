@@ -5,7 +5,8 @@ const Links = resolve => require(['@/components/Links'], resolve)
 const Framework = resolve => require(['@/components/Framework'], resolve)
 const Syntax = resolve => require(['@/components/Syntax'], resolve)
 const Transitions = resolve => require(['@/components/Transitions'], resolve)
-const Composition = resolve => require(['@/components/Composition'], resolve)
+const Advanced = resolve => require(['@/components/Advanced'], resolve)
+const Comparison = resolve => require(['@/components/Comparison'], resolve)
 
 Vue.use(Router)
 
@@ -38,9 +39,14 @@ export default new Router({
       component: Transitions
     },
     {
-      path: '/composition',
-      name: 'composition',
-      component: Composition
+      path: '/advanced',
+      name: 'advanced',
+      component: Advanced
+    },
+    {
+      path: '/comparison',
+      name: 'comparison',
+      component: Comparison
     }
   ]
 })

@@ -245,7 +245,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .syntax {
     >div >div {
       margin-bottom: 40px;

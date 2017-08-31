@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <a aria-hidden="true" class="navigator-arrow glyphicon glyphicon-chevron-left" title="上一页"></a>
-    <a aria-hidden="true" class="navigator-arrow glyphicon glyphicon-chevron-right" title="下一页"></a>
+    <!-- <a aria-hidden="true" class="navigator-arrow glyphicon glyphicon-chevron-left" title="上一页"></a>
+    <a aria-hidden="true" class="navigator-arrow glyphicon glyphicon-chevron-right" title="下一页"></a> -->
     <alert placement="center" :duration="3000" type="success">
       <h2 v-html="msg">{{msg}}</h2>
     </alert>
@@ -21,6 +21,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <h3><a href="https://github.com/SunnyYang0208/vuejs-example">View project code on github</a></h3>
   </div>
 </template>
 

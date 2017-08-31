@@ -6,101 +6,111 @@
     </div>
     <div class="content">
       <CustomMenu syntax="Basic Syntax"></CustomMenu>
-      <router-view class="page col-md-10 col-md-offset-2"></router-view>
+      <router-view class="page col-md-9 col-md-offset-3"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import Menu from './components/Menu.vue'
-Vue.mixin({
-  created: function () {
-    console.log('I am in APP.vue mixin.')
+  import Vue from 'vue'
+  import Menu from './components/Menu.vue'
+  Vue.mixin({
+    created: function () {
+      console.log('I am in APP.vue mixin.')
+    }
+  })
+  export default {
+    name: 'app',
+    components: {
+      CustomMenu: Menu
+    }
   }
-})
-export default {
-  name: 'app',
-  components: {
-    CustomMenu: Menu
-  }
-}
 </script>
 
 <style lang="less">
-body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-}
-#app {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-#app .logo {
-  width: 60px;
-  float: left;
-  margin: 10px 10px 0 0;
-}
-#app .slogan {
-  line-height: 80px;
-  font-size: 40px;
-  float: left;
-}
-div a.navigator-arrow {
-  position: absolute;
-  top: 50%;
-  font-size: 3rem;
-  color: #888888;
-  cursor: pointer;
-}
-.navigator-arrow:hover {
-  color: #42b983;
-  text-decoration: none;
-}
-.navigator-arrow.glyphicon-chevron-left {
-  left: 10px;
-}
-.navigator-arrow.glyphicon-chevron-right {
-  right: 10px;
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  background-color: #fff;
-  border-bottom: solid 1px #ebebeb;
-  z-index: 1;
-}
-.content {
-  margin-top: 80px;
-}
-.page {
-  padding: 30px;
-}
-.page > div {
-  margin-bottom: 40px;
-  h3 {
-    color: #333;
-    position: relative;
-    margin-left: 16px;
-    &:after {
-      content: "#";
-      color: #42b983;
-      position: absolute;
-      left: -0.7em;
-      bottom: -2px;
-      font-size: 1em;
-      font-weight: bold;
+  body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+  }
+  #app {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+  #app .logo {
+    width: 60px;
+    float: left;
+    margin: 10px 10px 0 0;
+  }
+  #app .slogan {
+    line-height: 80px;
+    font-size: 40px;
+    float: left;
+  }
+  div a.navigator-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: #888888;
+    cursor: pointer;
+  }
+  .navigator-arrow:hover {
+    color: #42b983;
+    text-decoration: none;
+  }
+  .navigator-arrow.glyphicon-chevron-left {
+    left: 10px;
+  }
+  .navigator-arrow.glyphicon-chevron-right {
+    right: 10px;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    border-bottom: solid 1px #ebebeb;
+    z-index: 1;
+  }
+  .content {
+    margin-top: 80px;
+  }
+  .page {
+    padding: 30px;
+  }
+  .page > div {
+    margin-bottom: 40px;
+    h3 {
+      color: #333;
+      position: relative;
+      margin-left: 16px;
+      &:after {
+        content: "#";
+        color: #42b983;
+        position: absolute;
+        left: -0.7em;
+        bottom: -2px;
+        font-size: 1em;
+        font-weight: bold;
+      }
+    }
+    h4 {
+      margin-top: 20px;
+    }
+    > div {
+      line-height: 25px;
+    }
+    .example {
+      padding: 20px;
+      border: solid 1px #ddd;
+      overflow-x: auto;
+      margin-top: 10px;
+      ul {
+        padding-left: 0;
+      }
     }
   }
-  h4 {
-    margin-top: 20px;
-  }
-  > div {
-    line-height: 25px;
-  }
-}
 </style>

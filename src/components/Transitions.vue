@@ -151,7 +151,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .transition {
     .green {
       color: #42b983;
@@ -187,15 +187,6 @@
       }
       100% {
         transform: scale(1);
-      }
-    }
-    .example {
-      padding: 20px;
-      border: solid 1px #ddd;
-      overflow-x: auto;
-      margin-top: 10px;
-      ul {
-        padding-left: 0;
       }
     }
     .component-fade-enter-active, .component-fade-leave-active {
