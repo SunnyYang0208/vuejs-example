@@ -171,6 +171,7 @@
   </div>
 </template>
 <script>
+  document.title = 'Syntax'
   // import Vue from 'vue'
   import Test from '@/components/Test.vue'
   var Child = {

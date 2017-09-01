@@ -42,6 +42,10 @@
           'v' is the default prefix if the transition element has no name.<br/>
           If you use transition name as 'my-transition' for example, then the v-enter class would instead be my-transition-enter.
         </div>
+        <div>We can also define custom animation class.</div>
+        <div>These will override the conventional class names. This is especially useful when you want to combine Vue’s transition system with an existing CSS animation library, such as Animate.css.</div>
+        <img src="../img/transition_3.png" />
+        <img src="../img/transition_4.png" />
         <h4>3. Animations</h4>
         <div>CSS animations are applied in the same way as CSS transitions, the difference being that v-enter is not removed immediately after the element is inserted, but on an animationend event.</div>
         <img src="../img/animation_1.png">
@@ -54,10 +58,12 @@
         <h4>4. JavaScript Hooks</h4>
         <div>Vue also supply some JavaScript hooks to handle transition. You can use them like blow:</div>
         <img src="../img/transition_2.png" >
-        <h4>5. Transitioning Between Elements</h4>
-        <div>Vue also supply some JavaScript hooks to handle transition. You can use them like blow:</div>
+        <h4>5. Transitions on Initial Render</h4>
+        <img src="../img/transition_appear.png" />
+        <h4>6. Transitioning Between Elements</h4>
+        <div>It’s actually possible to transition between any number of elements, either by using multiple v-ifs or binding a single element to a dynamic property.</div>
         <img src="../img/transition_mutiple_element.png" >
-        <h4>5. Transitioning Between Components</h4>
+        <h4>7. Transitioning Between Components</h4>
         <div>Transitioning between components is even simpler - we don’t even need the key attribute. Instead, we just wrap a dynamic component:</div>
         <img src="../img/transition_mutiple_component.png" >
         <div class="example">
@@ -68,11 +74,11 @@
             <component v-bind:is="view"></component>
           </transition>
         </div>
-        <h4>6. Transition Modes</h4>
+        <h4>8. Transition Modes</h4>
         <div>Two modes: 'in-out' and 'out-in'. Please refer to the example in Transitioning Between Elements</div>
         <h4 class="green">List Transitions</h4>
         <div>
-          We’ll use the 'transition-group> component to render a list transition.<br/>
+          We’ll use the 'transition-group' component to render a list transition.<br/>
           Vue is using a simple animation technique called FLIP to smoothly transition elements from their old position to their new position using transforms.
         </div>
         <h4>1. List Entering/Leaving Transitions</h4>
@@ -98,11 +104,18 @@
       <div>
         <h3>State Transition</h3>
         <div>We can animate the state changes using 3rd-party libraries to tween state, in combination with Vue’s reactivity and component systems.</div>
+        <ul>
+          <li>numbers and calculations</li>
+          <li>colors displayed</li>
+          <li>the positions of SVG nodes</li>
+          <li>the sizes and other properties of elements</li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 <script>
+  document.title = 'Transitions'
   export default {
     name: 'transitions',
     data () {

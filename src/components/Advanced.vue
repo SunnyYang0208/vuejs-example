@@ -130,7 +130,6 @@ var myMixin = {
   }
 }
 Vue.mixin({
-  name: 'composition',
   created: function () {
     var myOption = this.$options.myOption
     if (myOption) {
@@ -146,11 +145,12 @@ Vue.directive('focus', {
   }
 })
 export default {
+  name: 'advanced',
   mixins: [myMixin],
   created: function () {
     console.log('component hook called')
   },
-  myOption: 'hello!',
+  myOption: 'my hello!',
   directives: {
     anotherFocus: {
       inserted: function (el) {

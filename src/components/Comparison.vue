@@ -46,7 +46,7 @@
         Vue gives you full access to CSS within single-file components with 'scoped' attribute<br/>
         You also have the option of writing your CSS using any preprocessors (or post-processors) you’d like.
       </div>
-      <h4>3. Scale</h4>
+      <h4>3. Building and compling</h4>
       <div>
         For large applications, both Vue and React offer robust routing solutions.<br/>
         Another important difference between these offerings is that Vue’s companion libraries for state management and routing (among other concerns) are all officially supported and kept up-to-date with the core library. <br/>
@@ -73,7 +73,7 @@
       <div>
         Vue has a clearer separation between directives and components. In AngularJS, there’s a lot of confusion between the two.
       </div>
-      <h4>4. Directives vs Components</h4>
+      <h4>4. Performance</h4>
       <div>
         Vue has better performance and is much, much easier to optimize because it doesn’t use dirty checking. AngularJS becomes slow when there are a lot of watchers, because every time anything in the scope changes, all these watchers need to be re-evaluated again.
       </div>

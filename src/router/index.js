@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const Introduction = resolve => require(['@/components/Introduction'], resolve)
 const Links = resolve => require(['@/components/Links'], resolve)
-const Framework = resolve => require(['@/components/Framework'], resolve)
+const Build = resolve => require(['@/components/Build'], resolve)
 const Syntax = resolve => require(['@/components/Syntax'], resolve)
 const Transitions = resolve => require(['@/components/Transitions'], resolve)
 const Advanced = resolve => require(['@/components/Advanced'], resolve)
@@ -16,6 +16,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'introduction',
       component: Introduction
     },
     {
@@ -24,9 +25,9 @@ export default new Router({
       component: Links
     },
     {
-      path: '/framework',
-      name: 'framework',
-      component: Framework
+      path: '/build',
+      name: 'build',
+      component: Build
     },
     {
       path: '/syntax',

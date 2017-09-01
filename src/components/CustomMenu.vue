@@ -12,11 +12,10 @@
 
 <script>
 export default {
-  name: 'menu',
   props: ['syntax'],
   data () {
     return {
-      build: 'framework'
+      build: 'build'
     }
   }
 }

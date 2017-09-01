@@ -5,7 +5,7 @@
       <span class="slogan">Vue.js</span>
     </div>
     <div class="content">
-      <CustomMenu syntax="Basic Syntax"></CustomMenu>
+      <CustomMenu syntax="Basic Syntax"></CustomMenu><!-- recommend to use custome-menu -->
       <router-view class="page col-md-9 col-md-offset-3"></router-view>
     </div>
   </div>
@@ -13,7 +13,7 @@
 
 <script>
   import Vue from 'vue'
-  import Menu from './components/Menu.vue'
+  import CustomMenu from './components/CustomMenu.vue'
   Vue.mixin({
     created: function () {
       console.log('I am in APP.vue mixin.')
@@ -22,7 +22,7 @@
   export default {
     name: 'app',
     components: {
-      CustomMenu: Menu
+      CustomMenu: CustomMenu
     }
   }
 </script>

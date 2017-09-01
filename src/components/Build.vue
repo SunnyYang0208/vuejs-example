@@ -22,8 +22,9 @@
 </template>
 
 <script>
+document.title = 'Build'
 export default {
-  name: 'framework'
+  name: 'build'
 }
 </script>
 
