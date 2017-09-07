@@ -26,7 +26,6 @@
 </template>
 
 <script>
-document.title = 'Links'
 import {alert, carousel, slider} from 'vue-strap'
 export default {
   name: 'links',
@@ -36,6 +35,7 @@ export default {
     slider: slider
   },
   data () {
+    document.title = 'Links'
     return {
       msg: 'For detail infomation, <br/> you can reffer to official documentation below:'
     }

@@ -28,6 +28,7 @@
 </script>
 
 <style lang="less">
+  @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
   body {
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;

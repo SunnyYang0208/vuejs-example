@@ -36,12 +36,15 @@
           If you don't want to re-use element, just add a key attribute with unique values.
          </h5>
         <h4>2. v-show</h4>
-        <h1 v-show="true">{{vShowContent}}</h1>
+        <h1 v-show="false">{{vShowContent}}</h1>
         <div>The difference between v-if is that an element with v-show will always be rendered and remain in the DOM; v-show simply toggles the display CSS property of the element.</div>
         <h5><span :style="noteColor">Note:</span>Note that v-show doesn’t support the 'template' syntax, nor does it work with v-else.</h5>
       </div>
       <div>
         <h3>List rendering</h3>
+        <ul>
+          <li v-for="n in 10" v-if="n == 2" :key="n">{{n}}</li>  
+        </ul>
         <h4>1. Basic usage</h4>
         <img src="../img/for.png">
         <h5><span :style="noteColor">Note:</span>Inside v-for blocks we have full access to parent scope properties.</h5>
@@ -200,6 +203,7 @@
     name: 'syntax',
     data () {
       return {
+        show: false,
         vShowContent: "<h1 v-show='true'></h1>",
         currentView: 'SlotList',
         noteColor: {
@@ -284,6 +288,9 @@
         padding: 0;
         margin: 0;
       }
+    }
+    .test {
+      background-color: #ddd;
     }
   }
 </style>

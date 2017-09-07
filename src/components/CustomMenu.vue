@@ -12,11 +12,22 @@
 
 <script>
 export default {
-  props: ['syntax'],
+  // props: ['syntax'],
+  props: {
+    syntax: {
+      required: true,
+      validator: function (value) {
+        return value.length > 10
+      }
+    }
+  },
   data () {
     return {
       build: 'build'
     }
+  },
+  created: function () {
+    console.log('test')
   }
 }
 </script>
