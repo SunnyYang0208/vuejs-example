@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="appEnter">
     <div class="clearfix header">
       <img class="logo" src="./img/logo.png">
       <span class="slogan">Vue.js</span>
@@ -19,6 +19,13 @@
       console.log('I am in APP.vue mixin.')
     }
   })
+  Vue.filter('percentFormat', function (value) {
+    if (value && Number(value)) {
+      return (value * 100).toFixed(2) + '%'
+    } else {
+      return 0
+    }
+  })
   export default {
     name: 'app',
     components: {
@@ -33,18 +40,18 @@
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
   }
-  #app {
+  #appEnter {
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
   }
-  #app .logo {
+  #appEnter .logo {
     width: 60px;
     float: left;
     margin: 10px 10px 0 0;
   }
-  #app .slogan {
+  #appEnter .slogan {
     line-height: 80px;
     font-size: 40px;
     float: left;

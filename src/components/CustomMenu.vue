@@ -6,7 +6,7 @@
     <router-link tag="li" to="advanced"><a>Advanced</a></router-link>
     <router-link tag="li" to="comparison"><a>Framwork Comparison</a></router-link>
     <router-link tag="li" :to="build"><a>Build</a></router-link>
-    <router-link tag="li" to="links"><a>Links</a></router-link>
+    <router-link tag="li" :to="{name: 'refferLinks'}"><a>Links</a></router-link>
   </ul>
 </template>
 

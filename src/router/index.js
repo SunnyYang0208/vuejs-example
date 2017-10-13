@@ -18,10 +18,16 @@ export default new Router({
       path: '/',
       name: 'introduction',
       component: Introduction
+      // children: [
+      //   {
+      //     path: 'bar',
+      //     component: Bar,
+      //   }
+      // ]
     },
     {
       path: '/links',
-      name: 'links',
+      name: 'refferLinks',
       component: Links
     },
     {

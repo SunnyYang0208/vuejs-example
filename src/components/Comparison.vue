@@ -8,6 +8,7 @@
         <li>provide reactive and composable view components</li>
         <li>maintain focus in the core library, with concerns such as routing and global state management handled by companion libraries</li>
       </ul>
+      <div>Following are the differences:</div>
       <h4>1. Performance</h4>
       <div>
         Both React and Vue offer comparable performance in most commonly seen use cases, with Vue usually slightly ahead due to its lighter-weight Virtual DOM implementation.
@@ -78,13 +79,17 @@
         Vue has better performance and is much, much easier to optimize because it doesn’t use dirty checking. AngularJS becomes slow when there are a lot of watchers, because every time anything in the scope changes, all these watchers need to be re-evaluated again.
       </div>
     </div>
+    <!-- <div class="example">
+      <input v-focus="{arg1: 'test', arg2: 'test2'}" placeholder="global focus" />
+    </div> -->
   </div>
 </template>
 
 <script>
 document.title = 'Comparision'
 export default {
-  name: 'comparision'
+  name: 'comparision',
+  myOption: 'Comparison hello!'
 }
 </script>
 

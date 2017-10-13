@@ -44,7 +44,8 @@
       <img src="../img/filter.png" />
       <div class="example">
         <div>The number is: 12003</div>
-        <div>After format is: <span>{{12003 | wanFormat}}</span></div>  
+        <div>After format is: <span>{{12003 | wanFormat}}</span></div>
+        <div>Percent format is: <span>{{0.123 | percentFormat}}</span></div>
       </div> 
     </div>
     <div>
@@ -140,6 +141,7 @@ Vue.mixin({
 Vue.directive('focus', {
   inserted: function (el, binding) {
     el.focus()
+    console.log('binding.name=', binding.name)
     console.log('binding.value.arg1=', binding.value.arg1)
     console.log('binding.value.arg2=', binding.value.arg2)
   }
@@ -150,7 +152,7 @@ export default {
   created: function () {
     console.log('component hook called')
   },
-  myOption: 'my hello!',
+  myOption: 'Advanced hello!',
   directives: {
     anotherFocus: {
       inserted: function (el) {
