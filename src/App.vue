@@ -14,6 +14,31 @@
 <script>
   import Vue from 'vue'
   import CustomMenu from './components/CustomMenu.vue'
+  var MyPlugin = {}
+  MyPlugin.install = function (Vue, options) {
+    // 1. add global method or property
+    Vue.myGlobalMethod = function () {
+      // something logic ...
+      alert('myPlugin')
+    }
+    // 2. add a global asset
+    Vue.directive('my-directive', {
+      bind (el, binding, vnode, oldVnode) {
+        // something logic ...
+      }
+    })
+    // 3. inject some component options
+    Vue.mixin({
+      created: function () {
+        // something logic ...
+      }
+    })
+    // 4. add an instance method
+    Vue.prototype.$myMethod = function (methodOptions) {
+      // something logic ...
+    }
+  }
+  Vue.use(MyPlugin)
   Vue.mixin({
     created: function () {
       console.log('I am in APP.vue mixin.')
@@ -26,6 +51,7 @@
       return 0
     }
   })
+  Vue.myGlobalMethod()
   export default {
     name: 'app',
     components: {

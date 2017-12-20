@@ -6,7 +6,7 @@ const Build = resolve => require(['@/components/Build'], resolve)
 const Syntax = resolve => require(['@/components/Syntax'], resolve)
 const Transitions = resolve => require(['@/components/Transitions'], resolve)
 const Advanced = resolve => require(['@/components/Advanced'], resolve)
-const Comparison = resolve => require(['@/components/Comparison'], resolve)
+const Comparison = () => import('@/components/Comparison')
 
 Vue.use(Router)
 

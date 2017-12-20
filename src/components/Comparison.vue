@@ -87,9 +87,13 @@
 
 <script>
 document.title = 'Comparision'
+window.alert('test')
 export default {
   name: 'comparision',
-  myOption: 'Comparison hello!'
+  myOption: 'Comparison hello!',
+  data: function () {
+    return {}
+  }
 }
 </script>
 
